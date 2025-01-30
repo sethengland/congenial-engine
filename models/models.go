@@ -1,13 +1,13 @@
 package models
 
 type Receipt struct {
-	Retailer     string 
-	PurchaseDate string 
-	PurchaseTime string 
-	Items        []Item 
-	Total        string 
+	Retailer     string
+	PurchaseDate string
+	PurchaseTime string
+	Items        []Item
+	Total        string
 }
 type Item struct {
-	ShortDescription string 
+	ShortDescription string
 	Price            string
 }

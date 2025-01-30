@@ -1,9 +1,10 @@
 package main
 
 import (
-	"fetch/api"
 	"fmt"
 	"net/http"
+
+	"fetch/api"
 
 	"github.com/labstack/echo/v4"
 )
@@ -11,12 +12,12 @@ import (
 func main() {
 	e := echo.New()
 	e.POST("/receipts/process", func(c echo.Context) error {
-		var errInvalidReceipt = "The receipt is invalid."
+		errInvalidReceipt := "The receipt is invalid."
 		ctx := c.Request().Context()
 		req := new(api.ProcessReceiptRequest)
 		if err := c.Bind(req); err != nil {
 			fmt.Println("error: invalid request payload")
-			return  c.JSON(http.StatusBadRequest, errInvalidReceipt)
+			return c.JSON(http.StatusBadRequest, errInvalidReceipt)
 		}
 		processReceiptResponse, err := ProcessReceipt(ctx, *req)
 		if err != nil {
@@ -26,7 +27,7 @@ func main() {
 		return c.JSON(http.StatusOK, processReceiptResponse)
 	})
 	e.GET("/receipts/:id/points", func(c echo.Context) error {
-		var errNotFound = "No receipt found for that ID."
+		errNotFound := "No receipt found for that ID."
 		ctx := c.Request().Context()
 		id := c.Param("id")
 		req := api.GetPointsRequest{ID: id}

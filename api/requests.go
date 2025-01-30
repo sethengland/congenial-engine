@@ -13,5 +13,5 @@ type Item struct {
 }
 
 type GetPointsRequest struct {
-	ID string  `json:"id"`
+	ID string `json:"id"`
 }

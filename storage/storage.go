@@ -27,8 +27,8 @@ func SaveRecord(ctx context.Context, points int) (uuid.UUID, error) {
 		inMem[id] = points
 		return id, nil
 	}
-
 }
+
 func GetRecord(ctx context.Context, id uuid.UUID) (int, error) {
 	select {
 	case <-ctx.Done():

@@ -1,9 +1,10 @@
 package validate_test
 
 import (
+	"testing"
+
 	"fetch/api"
 	"fetch/validate"
-	"testing"
 
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"

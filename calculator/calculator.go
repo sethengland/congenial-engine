@@ -1,11 +1,12 @@
 package calculator
 
 import (
-	"fetch/models"
 	"math"
 	"strconv"
 	"strings"
 	"time"
+
+	"fetch/models"
 )
 
 func CalculatePoints(receipt models.Receipt) int {

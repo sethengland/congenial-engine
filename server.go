@@ -2,12 +2,13 @@ package main
 
 import (
 	"context"
+	"fmt"
+
 	"fetch/api"
 	"fetch/calculator"
 	"fetch/models"
 	"fetch/storage"
 	"fetch/validate"
-	"fmt"
 )
 
 func ProcessReceipt(ctx context.Context, req api.ProcessReceiptRequest) (api.ProcessReceiptResponse, error) {

@@ -1,9 +1,10 @@
 package calculator_test
 
 import (
+	"testing"
+
 	"fetch/calculator"
 	"fetch/models"
-	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -61,10 +62,12 @@ func TestCalculator(t *testing.T) {
 					{
 						ShortDescription: "Gatorade",
 						Price:            "2.25",
-					}, {
+					},
+					{
 						ShortDescription: "Gatorade",
 						Price:            "2.25",
-					}, {
+					},
+					{
 						ShortDescription: "Gatorade",
 						Price:            "2.25",
 					},

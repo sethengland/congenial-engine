@@ -1,15 +1,16 @@
 package validate
 
 import (
-	"fetch/api"
 	"fmt"
 	"regexp"
 	"time"
 
+	"fetch/api"
+
 	"github.com/google/uuid"
 )
 
-func ValidateProcessReceiptRequest(req api.ProcessReceiptRequest) (error) {
+func ValidateProcessReceiptRequest(req api.ProcessReceiptRequest) error {
 	valid, err := regexp.MatchString("^[\\w\\s\\-&]+$", req.Retailer)
 	if err != nil || !valid {
 		return fmt.Errorf("retailer did not match regex")
@@ -40,7 +41,7 @@ func ValidateProcessReceiptRequest(req api.ProcessReceiptRequest) (error) {
 	return nil
 }
 
-func ValidateItem(item api.Item) (error) {
+func ValidateItem(item api.Item) error {
 	valid, err := regexp.MatchString("^[\\w\\s\\-]+$", item.ShortDescription)
 	if err != nil || !valid {
 		return fmt.Errorf("short description did not match regex")
@@ -50,7 +51,7 @@ func ValidateItem(item api.Item) (error) {
 	if err != nil || !valid {
 		return fmt.Errorf("price did not match regex")
 	}
-	return  nil
+	return nil
 }
 
 func ValidateGetPointsRequest(req api.GetPointsRequest) (uuid.UUID, error) {
